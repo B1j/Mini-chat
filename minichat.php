@@ -30,7 +30,7 @@
 
         <p>
 
-        <label for="pseudo">Pseudo</label> : <input type="text" value="Pseudo" name="pseudo" id="pseudo" /><br />
+        <label for="pseudo">Pseudo</label> : <input type="text" value="<?php echo $_COOKIE['pseudo']?>" name="pseudo" id="pseudo" /><br />
 
         <label for="message">Message</label> :  <input type="text" name="message" id="message" /><br />
 
@@ -64,7 +64,7 @@ catch(Exception $e)
 
 
 // Récupération des 10 derniers messages
-
+/* tester de remplacer date par : DATE_FORMAT(date, '%d/%m/%Y %Hh%imin%ss') AS date */
 $reponse = $bdd->query('SELECT pseudo, message, date FROM minichat ORDER BY ID DESC LIMIT 0, 10');
 
 
